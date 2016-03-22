@@ -46,10 +46,10 @@ public class Amostra {
         
         // Se for par
         if(tamanho % 2 == 0) {
-            mediana = (numeros.get(tamanho / 2) + numeros.get((tamanho / 2) + 1)) / tamanho;
+            mediana = (numeros.get((tamanho / 2) - 1) + numeros.get(tamanho / 2)) / 2;
         }
         else {
-            mediana = numeros.get((int) tamanho / 2);
+            mediana = numeros.get((int) (tamanho / 2));
         }
         
         return mediana;
@@ -68,5 +68,9 @@ public class Amostra {
     public double getDesvioPadrao() {
         
         return Math.sqrt(getVariancia());
+    }
+    
+    public double getCoeficienteVariacao() {
+        return getDesvioPadrao() / getMedia();
     }
 }
