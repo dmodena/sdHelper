@@ -27,6 +27,10 @@ public class Amostra {
         numeros.remove(numero);
     }
     
+    public ArrayList<Double> getValores() {
+        return numeros;
+    }
+    
     public double getMedia() {
         double media = 0;
         
