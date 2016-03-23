@@ -77,4 +77,22 @@ public class Amostra {
     public double getCoeficienteVariacao() {
         return getDesvioPadrao() / getMedia();
     }
+    
+    public double getQuantil(double fracao) {
+        double quantil;
+        double ip;
+        int porcaoInteiro;
+        
+        ip = numeros.size() * fracao;
+        porcaoInteiro = (int) ip;
+        
+        if(ip == porcaoInteiro) {
+            quantil = (numeros.get((int) (ip - 1)) + numeros.get((int) ip)) / 2;
+        }
+        else {
+            quantil = numeros.get((int) ip);
+        }
+        
+        return quantil;
+    }
 }
