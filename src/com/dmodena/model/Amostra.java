@@ -19,6 +19,10 @@ public class Amostra {
         numeros = new ArrayList<>();
     }
     
+    public Amostra(ArrayList<Double> numeros) {
+        this.numeros = numeros;
+    }
+    
     public void adicionarNumero(Double numero) {
         numeros.add(numero);
     }
@@ -79,6 +83,9 @@ public class Amostra {
     }
     
     public double getQuantil(double fracao) {
+        // Ordenando números ASC
+        Collections.sort(numeros);
+        
         double quantil;
         double ip;
         int porcaoInteiro;
