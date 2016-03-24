@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
  * @author dmodena
  */
 public class FrmAmostra extends javax.swing.JFrame {
+    private final String VERSAO = "0.8.1";
     Amostra amostra;
     ArrayList<Double> valores;
     DefaultListModel<String> modelAmostra;
@@ -279,6 +280,11 @@ public class FrmAmostra extends javax.swing.JFrame {
         mnuAjuda.setText("Ajuda");
 
         mnuItemSobre.setText("Sobre...");
+        mnuItemSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuItemSobreActionPerformed(evt);
+            }
+        });
         mnuAjuda.add(mnuItemSobre);
 
         jMenuBar1.add(mnuAjuda);
@@ -364,6 +370,10 @@ public class FrmAmostra extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_mnuItemTudoActionPerformed
+
+    private void mnuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemSobreActionPerformed
+        JOptionPane.showMessageDialog(this, " sdHelper - Versão " + VERSAO + "\n Desenvolvido por Douglas Modena\n 2016", "Sobre", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_mnuItemSobreActionPerformed
 
     private void limparObjetos() {
         amostra = new Amostra();
