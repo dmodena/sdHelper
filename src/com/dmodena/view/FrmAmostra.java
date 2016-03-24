@@ -9,6 +9,7 @@ import com.dmodena.model.Amostra;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,9 +26,7 @@ public class FrmAmostra extends javax.swing.JFrame {
     public FrmAmostra() {
         initComponents();
         this.setLocationRelativeTo(null);
-        amostra = new Amostra();
-        valores = new ArrayList<>();
-        modelAmostra = new DefaultListModel<>();
+        limparObjetos();
     }
 
     /**
@@ -62,6 +61,13 @@ public class FrmAmostra extends javax.swing.JFrame {
         tfDesvioPadrao = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         tfCoeficienteVariacao = new javax.swing.JTextField();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        mnuQuantis = new javax.swing.JMenu();
+        mnuItemCalcularQuantis = new javax.swing.JMenuItem();
+        mnuLimpar = new javax.swing.JMenu();
+        mnuItemTudo = new javax.swing.JMenuItem();
+        mnuAjuda = new javax.swing.JMenu();
+        mnuItemSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -150,13 +156,13 @@ public class FrmAmostra extends javax.swing.JFrame {
                         .addComponent(tfValor))
                     .addComponent(btnIncluir))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 10, Short.MAX_VALUE)
+                .addComponent(jSeparator1)
                 .addGap(3, 3, 3)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblQtdValores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -251,6 +257,34 @@ public class FrmAmostra extends javax.swing.JFrame {
                 .addGap(12, 12, 12))
         );
 
+        mnuQuantis.setText("Quantis");
+
+        mnuItemCalcularQuantis.setText("Calcular quantis");
+        mnuQuantis.add(mnuItemCalcularQuantis);
+
+        jMenuBar1.add(mnuQuantis);
+
+        mnuLimpar.setText("Limpar");
+
+        mnuItemTudo.setText("Tudo");
+        mnuItemTudo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuItemTudoActionPerformed(evt);
+            }
+        });
+        mnuLimpar.add(mnuItemTudo);
+
+        jMenuBar1.add(mnuLimpar);
+
+        mnuAjuda.setText("Ajuda");
+
+        mnuItemSobre.setText("Sobre...");
+        mnuAjuda.add(mnuItemSobre);
+
+        jMenuBar1.add(mnuAjuda);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -320,9 +354,34 @@ public class FrmAmostra extends javax.swing.JFrame {
         atualizarLista();
     }//GEN-LAST:event_btnExcluirActionPerformed
 
+    private void mnuItemTudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemTudoActionPerformed
+        int confirmarLimpar = JOptionPane.showConfirmDialog(null, "Deseja limpar todos os valores?");
+        if(confirmarLimpar == JOptionPane.YES_OPTION) {
+            limparResultados();
+            limparObjetos();
+            atualizarLista();            
+            limparValor();
+        }
+        
+    }//GEN-LAST:event_mnuItemTudoActionPerformed
+
+    private void limparObjetos() {
+        amostra = new Amostra();
+        valores = new ArrayList<>();
+        modelAmostra = new DefaultListModel<>();
+    }
+    
     private void limparValor() {
         tfValor.setText("");
         tfValor.requestFocus();
+    }   
+    
+    private void limparResultados() {
+        tfMedia.setText("");
+        tfMediana.setText("");
+        tfVariancia.setText("");
+        tfDesvioPadrao.setText("");
+        tfCoeficienteVariacao.setText("");
     }
     
     private void checaHabilitaExclusao() {
@@ -393,12 +452,19 @@ public class FrmAmostra extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblQtdValores;
     private javax.swing.JList<String> lstValores;
+    private javax.swing.JMenu mnuAjuda;
+    private javax.swing.JMenuItem mnuItemCalcularQuantis;
+    private javax.swing.JMenuItem mnuItemSobre;
+    private javax.swing.JMenuItem mnuItemTudo;
+    private javax.swing.JMenu mnuLimpar;
+    private javax.swing.JMenu mnuQuantis;
     private javax.swing.JTextField tfCoeficienteVariacao;
     private javax.swing.JTextField tfDesvioPadrao;
     private javax.swing.JTextField tfMedia;
