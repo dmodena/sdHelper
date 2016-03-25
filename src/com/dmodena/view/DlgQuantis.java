@@ -11,19 +11,21 @@ import com.dmodena.model.Amostra;
  *
  * @author dmodena
  */
-public class FrmQuantis extends javax.swing.JFrame {
-    private Amostra amostra;
+public class DlgQuantis extends javax.swing.JDialog {
+    Amostra amostra;
     
     /**
-     * Creates new form FrmQuantis
+     * Creates new form DlgQuantis
      */
-    public FrmQuantis() {
+    public DlgQuantis(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
     }
     
-    public FrmQuantis(Amostra amostra) {
-        initComponents();
-        this.amostra = amostra;
+    public DlgQuantis(FrmAmostra parent, boolean modal, Amostra amostra) {
+        this((java.awt.Frame) parent, modal);
+        this.setLocationRelativeTo(parent);
+        this.amostra = amostra;        
     }
 
     /**
@@ -46,6 +48,7 @@ public class FrmQuantis extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("sdHelper - Quantis");
+        setAlwaysOnTop(true);
         setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -114,15 +117,15 @@ public class FrmQuantis extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -134,9 +137,12 @@ public class FrmQuantis extends javax.swing.JFrame {
                 double fracao = Double.parseDouble(tfFracao.getText());
                 tfQuantil.setText(String.valueOf(amostra.getQuantil(fracao)));
             }
+            else {
+                tfQuantil.setText("");
+            }
             tfFracao.setText("");
             tfFracao.requestFocus();
-        }        
+        }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private boolean validarEntrada() {
@@ -145,7 +151,9 @@ public class FrmQuantis extends javax.swing.JFrame {
         if(amostra != null) {
             if(amostra.getValores().size() > 0) {
                 if(tfFracao.getText().length() > 0) {
-                    valido = true;
+                    if(Double.parseDouble(tfFracao.getText()) > 0d && Double.parseDouble(tfFracao.getText()) < 1) {
+                        valido = true;
+                    }                    
                 }
             }
         }
@@ -170,20 +178,27 @@ public class FrmQuantis extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmQuantis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DlgQuantis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmQuantis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DlgQuantis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmQuantis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DlgQuantis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmQuantis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DlgQuantis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmQuantis().setVisible(true);
+                DlgQuantis dialog = new DlgQuantis(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
+import javax.swing.JDialog;
 
 /**
  *
@@ -382,9 +383,8 @@ public class FrmAmostra extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuItemSobreActionPerformed
 
     private void mnuItemCalcularQuantisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemCalcularQuantisActionPerformed
-        FrmQuantis frmQuantis = new FrmQuantis(amostra);
-        frmQuantis.setVisible(true);
-        frmQuantis.setLocationRelativeTo(this);
+        DlgQuantis dlgQuantis = new DlgQuantis(this, true, amostra);
+        dlgQuantis.setVisible(true);
     }//GEN-LAST:event_mnuItemCalcularQuantisActionPerformed
 
     private void limparObjetos() {
