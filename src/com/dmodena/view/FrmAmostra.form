@@ -13,6 +13,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Calcular quantis"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuItemCalcularQuantisActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

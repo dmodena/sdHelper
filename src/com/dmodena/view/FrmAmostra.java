@@ -261,6 +261,11 @@ public class FrmAmostra extends javax.swing.JFrame {
         mnuQuantis.setText("Quantis");
 
         mnuItemCalcularQuantis.setText("Calcular quantis");
+        mnuItemCalcularQuantis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuItemCalcularQuantisActionPerformed(evt);
+            }
+        });
         mnuQuantis.add(mnuItemCalcularQuantis);
 
         jMenuBar1.add(mnuQuantis);
@@ -374,6 +379,12 @@ public class FrmAmostra extends javax.swing.JFrame {
     private void mnuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemSobreActionPerformed
         JOptionPane.showMessageDialog(this, " sdHelper - Versão " + VERSAO + "\n Desenvolvido por Douglas Modena\n 2016", "Sobre", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_mnuItemSobreActionPerformed
+
+    private void mnuItemCalcularQuantisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemCalcularQuantisActionPerformed
+        FrmQuantis frmQuantis = new FrmQuantis(amostra);
+        frmQuantis.setVisible(true);
+        frmQuantis.setLocationRelativeTo(this);
+    }//GEN-LAST:event_mnuItemCalcularQuantisActionPerformed
 
     private void limparObjetos() {
         amostra = new Amostra();
