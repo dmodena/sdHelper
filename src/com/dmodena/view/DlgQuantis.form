@@ -113,10 +113,14 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfFracao">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Fra&#xe7;&#xe3;o para c&#xe1;lculo do quantil. O valor deve estar entre 0 e 1."/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnCalcular">
           <Properties>
             <Property name="text" type="java.lang.String" value="Calcular"/>
+            <Property name="toolTipText" type="java.lang.String" value="Calcula o quantil informado."/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalcularActionPerformed"/>
@@ -124,6 +128,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="tfFracao"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="x ="/>
           </Properties>
         </Component>
@@ -131,11 +138,15 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="tfQuantil"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="q(x) ="/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfQuantil">
           <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Exibe o resultado do quantil. Em caso de erro, este campo ficar&#xe1; vazio."/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>

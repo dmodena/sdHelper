@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author dmodena
  */
 public class FrmAmostra extends javax.swing.JFrame {
-    private final String VERSAO = "0.8.1";
+    private final String VERSAO = "0.9.1";
     Amostra amostra;
     NumberValidator numberValidator;
     ArrayList<Double> valores;
@@ -80,9 +80,13 @@ public class FrmAmostra extends javax.swing.JFrame {
 
         jLabel1.setText("Insira cada valor abaixo e clique em Incluir");
 
+        jLabel2.setLabelFor(tfValor);
         jLabel2.setText("Valor");
 
+        tfValor.setToolTipText("Valor a ser adicionado. Use ponto (.) para separar as casas decimais.");
+
         btnIncluir.setText("Incluir");
+        btnIncluir.setToolTipText("Inclui o valor no grupo de valores.");
         btnIncluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIncluirActionPerformed(evt);
@@ -90,6 +94,7 @@ public class FrmAmostra extends javax.swing.JFrame {
         });
 
         lstValores.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        lstValores.setToolTipText("Valores incluídos para cálculo.");
         lstValores.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 lstValoresValueChanged(evt);
@@ -97,9 +102,11 @@ public class FrmAmostra extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(lstValores);
 
+        jLabel3.setLabelFor(lstValores);
         jLabel3.setText("Valores");
 
         btnExcluir.setText("Excluir Valor");
+        btnExcluir.setToolTipText("Exclui o valor selecionado da lista.");
         btnExcluir.setEnabled(false);
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +115,7 @@ public class FrmAmostra extends javax.swing.JFrame {
         });
 
         btnCalcular.setText("Calcular");
+        btnCalcular.setToolTipText("Calcula os valores abaixo de acordo com números inseridos.");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalcularActionPerformed(evt);
@@ -176,24 +184,34 @@ public class FrmAmostra extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultados"));
 
+        jLabel4.setLabelFor(tfMedia);
         jLabel4.setText("Média");
 
+        tfMedia.setToolTipText("Média aritmética dos valores inseridos.");
         tfMedia.setEnabled(false);
 
+        jLabel5.setLabelFor(tfMediana);
         jLabel5.setText("Mediana");
 
+        tfMediana.setToolTipText("Mediana dos valores inseridos.");
         tfMediana.setEnabled(false);
 
+        jLabel6.setLabelFor(tfVariancia);
         jLabel6.setText("Variância");
 
+        tfVariancia.setToolTipText("Variância dos valores inseridos.");
         tfVariancia.setEnabled(false);
 
+        jLabel7.setLabelFor(tfDesvioPadrao);
         jLabel7.setText("Desvio Padrão");
 
+        tfDesvioPadrao.setToolTipText("Desvio padrão dos valores inseridos.");
         tfDesvioPadrao.setEnabled(false);
 
+        jLabel8.setLabelFor(tfCoeficienteVariacao);
         jLabel8.setText("Coeficiente de Variação");
 
+        tfCoeficienteVariacao.setToolTipText("Coeficiente de variação dos valores inseridos. Multiplique por 100 para obter porcentagem.");
         tfCoeficienteVariacao.setEnabled(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

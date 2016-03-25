@@ -189,14 +189,21 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="tfValor"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Valor"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfValor">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Valor a ser adicionado. Use ponto (.) para separar as casas decimais."/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnIncluir">
           <Properties>
             <Property name="text" type="java.lang.String" value="Incluir"/>
+            <Property name="toolTipText" type="java.lang.String" value="Inclui o valor no grupo de valores."/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIncluirActionPerformed"/>
@@ -215,6 +222,7 @@
                   <StringArray count="0"/>
                 </Property>
                 <Property name="selectionMode" type="int" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Valores inclu&#xed;dos para c&#xe1;lculo."/>
               </Properties>
               <Events>
                 <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="lstValoresValueChanged"/>
@@ -229,12 +237,16 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="lstValores"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Valores"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnExcluir">
           <Properties>
             <Property name="text" type="java.lang.String" value="Excluir Valor"/>
+            <Property name="toolTipText" type="java.lang.String" value="Exclui o valor selecionado da lista."/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
@@ -244,6 +256,7 @@
         <Component class="javax.swing.JButton" name="btnCalcular">
           <Properties>
             <Property name="text" type="java.lang.String" value="Calcular"/>
+            <Property name="toolTipText" type="java.lang.String" value="Calcula os valores abaixo de acordo com n&#xfa;meros inseridos."/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalcularActionPerformed"/>
@@ -353,51 +366,71 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="tfMedia"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="M&#xe9;dia"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfMedia">
           <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="M&#xe9;dia aritm&#xe9;tica dos valores inseridos."/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="tfMediana"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Mediana"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfMediana">
           <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Mediana dos valores inseridos."/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="tfVariancia"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Vari&#xe2;ncia"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfVariancia">
           <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Vari&#xe2;ncia dos valores inseridos."/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="tfDesvioPadrao"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Desvio Padr&#xe3;o"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfDesvioPadrao">
           <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Desvio padr&#xe3;o dos valores inseridos."/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="tfCoeficienteVariacao"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Coeficiente de Varia&#xe7;&#xe3;o"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfCoeficienteVariacao">
           <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Coeficiente de varia&#xe7;&#xe3;o dos valores inseridos. Multiplique por 100 para obter porcentagem."/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>

@@ -57,17 +57,23 @@ public class DlgQuantis extends javax.swing.JDialog {
 
         jLabel1.setText("Entre com o valor decimal do quantil");
 
+        tfFracao.setToolTipText("Fração para cálculo do quantil. O valor deve estar entre 0 e 1.");
+
         btnCalcular.setText("Calcular");
+        btnCalcular.setToolTipText("Calcula o quantil informado.");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalcularActionPerformed(evt);
             }
         });
 
+        jLabel2.setLabelFor(tfFracao);
         jLabel2.setText("x =");
 
+        jLabel3.setLabelFor(tfQuantil);
         jLabel3.setText("q(x) =");
 
+        tfQuantil.setToolTipText("Exibe o resultado do quantil. Em caso de erro, este campo ficará vazio.");
         tfQuantil.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
