@@ -71,6 +71,7 @@ public class FrmAmostra extends javax.swing.JFrame {
         mnuItemSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("sdHelper - Geral");
         setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Valores"));
@@ -377,7 +378,7 @@ public class FrmAmostra extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuItemTudoActionPerformed
 
     private void mnuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemSobreActionPerformed
-        JOptionPane.showMessageDialog(this, " sdHelper - Versão " + VERSAO + "\n Desenvolvido por Douglas Modena\n 2016", "Sobre", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, " sdHelper - Versão " + VERSAO + "\n Desenvolvido por Douglas Modena\n 2016", "sdHelper - Sobre", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_mnuItemSobreActionPerformed
 
     private void mnuItemCalcularQuantisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemCalcularQuantisActionPerformed

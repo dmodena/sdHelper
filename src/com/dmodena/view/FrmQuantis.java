@@ -45,6 +45,7 @@ public class FrmQuantis extends javax.swing.JFrame {
         tfQuantil = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("sdHelper - Quantis");
         setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
