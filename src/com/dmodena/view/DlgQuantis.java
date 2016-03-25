@@ -6,6 +6,7 @@
 package com.dmodena.view;
 
 import com.dmodena.model.Amostra;
+import com.dmodena.model.NumberValidator;
 
 /**
  *
@@ -13,6 +14,7 @@ import com.dmodena.model.Amostra;
  */
 public class DlgQuantis extends javax.swing.JDialog {
     Amostra amostra;
+    NumberValidator numberValidator;
     
     /**
      * Creates new form DlgQuantis
@@ -132,31 +134,26 @@ public class DlgQuantis extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        if(!(amostra == null && amostra.getValores().isEmpty())) {
-            if(validarEntrada()) {
-                double fracao = Double.parseDouble(tfFracao.getText());
-                tfQuantil.setText(String.valueOf(amostra.getQuantil(fracao)));
-            }
-            else {
-                tfQuantil.setText("");
-            }
-            tfFracao.setText("");
-            tfFracao.requestFocus();
+        if(validarEntrada()) {
+            double fracao = Double.parseDouble(tfFracao.getText());
+            tfQuantil.setText(String.valueOf(amostra.getQuantil(fracao)));
         }
+        else {
+            tfQuantil.setText("");
+        }
+        tfFracao.setText("");
+        tfFracao.requestFocus();        
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private boolean validarEntrada() {
         boolean valido = false;
         
-        if(amostra != null) {
-            if(amostra.getValores().size() > 0) {
-                if(tfFracao.getText().length() > 0) {
-                    if(Double.parseDouble(tfFracao.getText()) > 0d && Double.parseDouble(tfFracao.getText()) < 1) {
-                        valido = true;
-                    }                    
+        if(amostra != null)
+            if(amostra.getValores().size() > 0)
+                if(!tfFracao.getText().trim().isEmpty()) {
+                    numberValidator = new NumberValidator(true);
+                    valido = numberValidator.validate(tfFracao.getText().trim());
                 }
-            }
-        }
 
         return valido;
     }

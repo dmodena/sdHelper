@@ -6,11 +6,11 @@
 package com.dmodena.view;
 
 import com.dmodena.model.Amostra;
+import com.dmodena.model.NumberValidator;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
-import javax.swing.JDialog;
 
 /**
  *
@@ -19,6 +19,7 @@ import javax.swing.JDialog;
 public class FrmAmostra extends javax.swing.JFrame {
     private final String VERSAO = "0.8.1";
     Amostra amostra;
+    NumberValidator numberValidator;
     ArrayList<Double> valores;
     DefaultListModel<String> modelAmostra;
     
@@ -423,8 +424,14 @@ public class FrmAmostra extends javax.swing.JFrame {
     }
     
     private boolean valorValido() {
-        // Se o campo não estiver vazio, o valor é válido
-        return (!tfValor.getText().isEmpty());
+        boolean valido = false;
+        
+        if(!tfValor.getText().trim().isEmpty()) {
+            numberValidator = new NumberValidator();
+            valido = numberValidator.validate(tfValor.getText().trim());
+        }        
+        
+        return valido;
     }
     
     /**
