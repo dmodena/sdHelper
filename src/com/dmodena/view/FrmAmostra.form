@@ -378,6 +378,9 @@
         <Component class="javax.swing.JTextField" name="tfMedia">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="M&#xe9;dia aritm&#xe9;tica dos valores inseridos."/>
+            <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+            </Property>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
@@ -392,6 +395,9 @@
         <Component class="javax.swing.JTextField" name="tfMediana">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Mediana dos valores inseridos."/>
+            <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+            </Property>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
@@ -406,6 +412,9 @@
         <Component class="javax.swing.JTextField" name="tfVariancia">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Vari&#xe2;ncia dos valores inseridos."/>
+            <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+            </Property>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
@@ -420,6 +429,9 @@
         <Component class="javax.swing.JTextField" name="tfDesvioPadrao">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Desvio padr&#xe3;o dos valores inseridos."/>
+            <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+            </Property>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
@@ -434,6 +446,9 @@
         <Component class="javax.swing.JTextField" name="tfCoeficienteVariacao">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Coeficiente de varia&#xe7;&#xe3;o dos valores inseridos. Multiplique por 100 para obter porcentagem."/>
+            <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+            </Property>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>

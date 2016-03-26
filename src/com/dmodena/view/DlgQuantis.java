@@ -80,6 +80,7 @@ public class DlgQuantis extends javax.swing.JDialog {
         jLabel3.setText("q(x) =");
 
         tfQuantil.setToolTipText("Exibe o resultado do quantil. Em caso de erro, este campo ficará vazio.");
+        tfQuantil.setDisabledTextColor(java.awt.Color.black);
         tfQuantil.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author dmodena
  */
 public class FrmAmostra extends javax.swing.JFrame {
-    private final String VERSAO = "0.9.2";
+    private final String VERSAO = "0.9.4";
     Amostra amostra;
     NumberValidator numberValidator;
     ArrayList<Double> valores;
@@ -193,30 +193,35 @@ public class FrmAmostra extends javax.swing.JFrame {
         jLabel4.setText("Média");
 
         tfMedia.setToolTipText("Média aritmética dos valores inseridos.");
+        tfMedia.setDisabledTextColor(java.awt.Color.black);
         tfMedia.setEnabled(false);
 
         jLabel5.setLabelFor(tfMediana);
         jLabel5.setText("Mediana");
 
         tfMediana.setToolTipText("Mediana dos valores inseridos.");
+        tfMediana.setDisabledTextColor(java.awt.Color.black);
         tfMediana.setEnabled(false);
 
         jLabel6.setLabelFor(tfVariancia);
         jLabel6.setText("Variância");
 
         tfVariancia.setToolTipText("Variância dos valores inseridos.");
+        tfVariancia.setDisabledTextColor(java.awt.Color.black);
         tfVariancia.setEnabled(false);
 
         jLabel7.setLabelFor(tfDesvioPadrao);
         jLabel7.setText("Desvio Padrão");
 
         tfDesvioPadrao.setToolTipText("Desvio padrão dos valores inseridos.");
+        tfDesvioPadrao.setDisabledTextColor(java.awt.Color.black);
         tfDesvioPadrao.setEnabled(false);
 
         jLabel8.setLabelFor(tfCoeficienteVariacao);
         jLabel8.setText("Coeficiente de Variação");
 
         tfCoeficienteVariacao.setToolTipText("Coeficiente de variação dos valores inseridos. Multiplique por 100 para obter porcentagem.");
+        tfCoeficienteVariacao.setDisabledTextColor(java.awt.Color.black);
         tfCoeficienteVariacao.setEnabled(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -403,7 +408,7 @@ public class FrmAmostra extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuItemTudoActionPerformed
 
     private void mnuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemSobreActionPerformed
-        JOptionPane.showMessageDialog(this, " sdHelper - Versão " + VERSAO + "\n Desenvolvido por Douglas Modena\n 2016", "sdHelper - Sobre", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, " sdHelper - Versão " + VERSAO + "\n Desenvolvido por Douglas Modena\n 2016 - MIT License\n github.com/dmodena/sdHelper", "sdHelper - Sobre", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_mnuItemSobreActionPerformed
 
     private void mnuItemCalcularQuantisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemCalcularQuantisActionPerformed
