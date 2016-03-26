@@ -13,11 +13,11 @@ import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Classe principal para armazenamento de dados e cálculos de valores estatísticos.
  * @author dmodena
  */
 public class FrmAmostra extends javax.swing.JFrame {
-    private final String VERSAO = "0.9.4";
+    private final String VERSAO = "1.0.1";
     Amostra amostra;
     NumberValidator numberValidator;
     ArrayList<Double> valores;

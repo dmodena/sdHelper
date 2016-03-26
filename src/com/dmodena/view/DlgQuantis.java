@@ -10,7 +10,7 @@ import com.dmodena.model.NumberValidator;
 import java.text.DecimalFormat;
 
 /**
- *
+ * Classe utilizada para cálculos de quantis.
  * @author dmodena
  */
 public class DlgQuantis extends javax.swing.JDialog {

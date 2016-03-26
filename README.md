@@ -1,6 +1,6 @@
 sdHelper
 ========
-Versão: 0.9.4
+Versão: 1.0.1
 
 Autor: Douglas Modena
 
