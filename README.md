@@ -18,7 +18,7 @@ Como Utilizar
 --------------
 Para utilizar este programa, você precisa ter o Java (JVM) versão 1.7 ou superior instalado em seu computador.
 
-Faça download do programa através do link no [Mega](https://mega.nz/#!pNcnUKgQ!hD3uFfQZJOFXXusbGpjAj2IqOOWkyqu0jruY4IkgCxs). Não é necessário instalar o programa, basta executá-lo.
+Faça download do programa através do link no [Mega](https://mega.nz/#!9BkQVASK!3K5GwTFtGJO5HEMZnrHdPcBz4-n05FeouFkPDnDbqEE). Não é necessário instalar o programa, basta executá-lo.
 
 Durante a execução, adicione cada valor de sua amostra e clique em **Incluir**. Ao terminar de incluir todos os valores, clique em **Calcular**.
 
