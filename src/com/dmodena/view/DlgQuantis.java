@@ -7,6 +7,7 @@ package com.dmodena.view;
 
 import com.dmodena.model.Amostra;
 import com.dmodena.model.NumberValidator;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -58,6 +59,11 @@ public class DlgQuantis extends javax.swing.JDialog {
         jLabel1.setText("Entre com o valor decimal do quantil");
 
         tfFracao.setToolTipText("Fração para cálculo do quantil. O valor deve estar entre 0 e 1.");
+        tfFracao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfFracaoActionPerformed(evt);
+            }
+        });
 
         btnCalcular.setText("Calcular");
         btnCalcular.setToolTipText("Calcula o quantil informado.");
@@ -141,8 +147,11 @@ public class DlgQuantis extends javax.swing.JDialog {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         if(validarEntrada()) {
+            DecimalFormat df = new DecimalFormat("#.######");
             double fracao = Double.parseDouble(tfFracao.getText());
-            tfQuantil.setText(String.valueOf(amostra.getQuantil(fracao)));
+            String quantil = df.format(amostra.getQuantil(fracao));
+            
+            tfQuantil.setText(quantil);
         }
         else {
             tfQuantil.setText("");
@@ -150,6 +159,10 @@ public class DlgQuantis extends javax.swing.JDialog {
         tfFracao.setText("");
         tfFracao.requestFocus();        
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void tfFracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFracaoActionPerformed
+        btnCalcularActionPerformed(evt);
+    }//GEN-LAST:event_tfFracaoActionPerformed
 
     private boolean validarEntrada() {
         boolean valido = false;

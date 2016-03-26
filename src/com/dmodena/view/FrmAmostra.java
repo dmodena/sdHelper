@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author dmodena
  */
 public class FrmAmostra extends javax.swing.JFrame {
-    private final String VERSAO = "0.9.1";
+    private final String VERSAO = "0.9.2";
     Amostra amostra;
     NumberValidator numberValidator;
     ArrayList<Double> valores;
@@ -84,6 +84,11 @@ public class FrmAmostra extends javax.swing.JFrame {
         jLabel2.setText("Valor");
 
         tfValor.setToolTipText("Valor a ser adicionado. Use ponto (.) para separar as casas decimais.");
+        tfValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfValorActionPerformed(evt);
+            }
+        });
 
         btnIncluir.setText("Incluir");
         btnIncluir.setToolTipText("Inclui o valor no grupo de valores.");
@@ -405,6 +410,10 @@ public class FrmAmostra extends javax.swing.JFrame {
         DlgQuantis dlgQuantis = new DlgQuantis(this, true, amostra);
         dlgQuantis.setVisible(true);
     }//GEN-LAST:event_mnuItemCalcularQuantisActionPerformed
+
+    private void tfValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfValorActionPerformed
+        btnIncluirActionPerformed(evt);
+    }//GEN-LAST:event_tfValorActionPerformed
 
     private void limparObjetos() {
         amostra = new Amostra();
