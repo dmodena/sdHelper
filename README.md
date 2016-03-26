@@ -28,9 +28,9 @@ Para verificar os Quantis, clique no **Quantis > Calcular quantis**. Lembre-se d
 
 Para limpar os dados, clique em **Limpar > Tudo** e confirme a sua escolha.
 
-Teste
+Testes
 -------
-O teste foi executado em uma classe no Console com valores fixos para a validação dos resultados. Essa classe se encontra em *com.dmodena.teste/Teste.java* no código-fonte.
+O testes foram criados com JUnit, e se encontram em *Pacotes de Teste/com.dmodena.model/*.
 
 Dúvidas ou Sugestões
 --------------------
