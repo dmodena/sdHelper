@@ -147,6 +147,10 @@ public class Amostra {
         return quantil;
     }
     
+    /**
+     * Retorna a moda, ou vazio para conjuntos amodais.
+     * @return moda
+     */
     public ArrayList<Double> getModa() {
         // Ordenando números ASC
         Collections.sort(numeros);
@@ -189,6 +193,8 @@ public class Amostra {
                     aux = numeros.get(k);
                     firstNumberFound = true;
                 }
+                
+                k++;
             }while(!firstNumberFound);
                   
             // Gravando outros valores na moda, se não forem repetidos

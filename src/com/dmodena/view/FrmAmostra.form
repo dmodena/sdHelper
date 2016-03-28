@@ -4,17 +4,25 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="mnuQuantis">
+        <Menu class="javax.swing.JMenu" name="mnuOutros">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Quantis"/>
+            <Property name="text" type="java.lang.String" value="Outros"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="mnuItemCalcularQuantis">
+            <MenuItem class="javax.swing.JMenuItem" name="mnuItemModa">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Calcular quantis"/>
+                <Property name="text" type="java.lang.String" value="Moda"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuItemCalcularQuantisActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuItemModaActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnuItemQuantis">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Quantis"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuItemQuantisActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

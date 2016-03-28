@@ -1,6 +1,6 @@
 sdHelper
 ========
-Versão: 1.0.1
+Versão: 1.2.1
 
 Autor: Douglas Modena
 
@@ -12,21 +12,28 @@ sdHelper é um pequeno programa em Java criado para auxiliar nos estudos de Esta
 - Variância
 - Desvio Padrão
 - Coeficiente de Variação
+- Moda
 - Quantis
 
 Como Utilizar
 --------------
-Para utilizar este programa, você precisa ter o Java (JVM) versão 1.7 ou superior instalado em seu computador.
+Você pode fazer o download do programa no site do **Mega** clicando [neste link](https://mega.nz/#!9BkQVASK!3K5GwTFtGJO5HEMZnrHdPcBz4-n05FeouFkPDnDbqEE).
 
-Faça download do programa através do link no [Mega](https://mega.nz/#!9BkQVASK!3K5GwTFtGJO5HEMZnrHdPcBz4-n05FeouFkPDnDbqEE). Não é necessário instalar o programa, basta executá-lo.
+Não é necessário instalar o programa, basta executá-lo. Para tanto, você precisa apenas ter o Java (JVM) versão 1.7 ou superior instalado em seu computador.
 
 Durante a execução, adicione cada valor de sua amostra e clique em **Incluir**. Ao terminar de incluir todos os valores, clique em **Calcular**.
 
-Caso queira remover algum dos valores inseridos, selecione o valor em sua lista e clique em **Excluir Valor**
+Caso queira remover algum dos valores inseridos, selecione o valor em sua lista e clique em **Excluir Valor**.
 
-Para verificar os Quantis, clique no **Quantis > Calcular quantis**. Lembre-se de adicionar os valores de sua amostra antes de calcular os quantis. Informe a razão do quantil e clique em Calcular.
+Para calcular outros valores, clique em **Outros**. Lembre-se de adicionar os números de sua amostra na lista para que esses outros valores sejam calculados.
+
+- Para verificar a Moda, clique em **Outros > Moda**. Caso o conjunto seja amodal, uma mensagem será exibida.
+
+- Para verificar os Quantis, clique em **Outros > Quantis**.  Informe a razão do quantil e clique em Calcular.
 
 Para limpar os dados, clique em **Limpar > Tudo** e confirme a sua escolha.
+
+Clicando em **Ajuda > Sobre...** você pode verificar a versão do seu programa.
 
 Testes
 -------

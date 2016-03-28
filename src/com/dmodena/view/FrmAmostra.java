@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author dmodena
  */
 public class FrmAmostra extends javax.swing.JFrame {
-    private final String VERSAO = "1.0.1";
+    private final String VERSAO = "1.2.1";
     Amostra amostra;
     NumberValidator numberValidator;
     ArrayList<Double> valores;
@@ -65,8 +65,9 @@ public class FrmAmostra extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         tfCoeficienteVariacao = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
-        mnuQuantis = new javax.swing.JMenu();
-        mnuItemCalcularQuantis = new javax.swing.JMenuItem();
+        mnuOutros = new javax.swing.JMenu();
+        mnuItemModa = new javax.swing.JMenuItem();
+        mnuItemQuantis = new javax.swing.JMenuItem();
         mnuLimpar = new javax.swing.JMenu();
         mnuItemTudo = new javax.swing.JMenuItem();
         mnuAjuda = new javax.swing.JMenu();
@@ -289,17 +290,25 @@ public class FrmAmostra extends javax.swing.JFrame {
                 .addGap(12, 12, 12))
         );
 
-        mnuQuantis.setText("Quantis");
+        mnuOutros.setText("Outros");
 
-        mnuItemCalcularQuantis.setText("Calcular quantis");
-        mnuItemCalcularQuantis.addActionListener(new java.awt.event.ActionListener() {
+        mnuItemModa.setText("Moda");
+        mnuItemModa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuItemCalcularQuantisActionPerformed(evt);
+                mnuItemModaActionPerformed(evt);
             }
         });
-        mnuQuantis.add(mnuItemCalcularQuantis);
+        mnuOutros.add(mnuItemModa);
 
-        jMenuBar1.add(mnuQuantis);
+        mnuItemQuantis.setText("Quantis");
+        mnuItemQuantis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuItemQuantisActionPerformed(evt);
+            }
+        });
+        mnuOutros.add(mnuItemQuantis);
+
+        jMenuBar1.add(mnuOutros);
 
         mnuLimpar.setText("Limpar");
 
@@ -388,7 +397,8 @@ public class FrmAmostra extends javax.swing.JFrame {
     }//GEN-LAST:event_lstValoresValueChanged
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        Double valor = Double.parseDouble(lstValores.getSelectedValue());
+        String unformatted = lstValores.getSelectedValue();        
+        Double valor = Double.parseDouble(unformatted.replaceAll(",", "."));
         
         amostra.removerNumero(valor);
         valores.remove(valor);        
@@ -411,14 +421,19 @@ public class FrmAmostra extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, " sdHelper - Versão " + VERSAO + "\n Desenvolvido por Douglas Modena\n 2016 - MIT License\n github.com/dmodena/sdHelper", "sdHelper - Sobre", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_mnuItemSobreActionPerformed
 
-    private void mnuItemCalcularQuantisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemCalcularQuantisActionPerformed
+    private void mnuItemQuantisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemQuantisActionPerformed
         DlgQuantis dlgQuantis = new DlgQuantis(this, true, amostra);
         dlgQuantis.setVisible(true);
-    }//GEN-LAST:event_mnuItemCalcularQuantisActionPerformed
+    }//GEN-LAST:event_mnuItemQuantisActionPerformed
 
     private void tfValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfValorActionPerformed
         btnIncluirActionPerformed(evt);
     }//GEN-LAST:event_tfValorActionPerformed
+
+    private void mnuItemModaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemModaActionPerformed
+        DlgModa dlgModa = new DlgModa(this, true, amostra);
+        dlgModa.setVisible(true);
+    }//GEN-LAST:event_mnuItemModaActionPerformed
 
     private void limparObjetos() {
         amostra = new Amostra();
@@ -446,9 +461,11 @@ public class FrmAmostra extends javax.swing.JFrame {
     
     private void atualizarLista() {
         modelAmostra = new DefaultListModel<>();
+        DecimalFormat df = new DecimalFormat("#.######");
         
         for(Double v : valores) {
-            modelAmostra.addElement(String.valueOf(v));
+            String elemento = df.format(v);
+            modelAmostra.addElement(elemento);
         }
         
         lstValores.setModel(modelAmostra);
@@ -521,11 +538,12 @@ public class FrmAmostra extends javax.swing.JFrame {
     private javax.swing.JLabel lblQtdValores;
     private javax.swing.JList<String> lstValores;
     private javax.swing.JMenu mnuAjuda;
-    private javax.swing.JMenuItem mnuItemCalcularQuantis;
+    private javax.swing.JMenuItem mnuItemModa;
+    private javax.swing.JMenuItem mnuItemQuantis;
     private javax.swing.JMenuItem mnuItemSobre;
     private javax.swing.JMenuItem mnuItemTudo;
     private javax.swing.JMenu mnuLimpar;
-    private javax.swing.JMenu mnuQuantis;
+    private javax.swing.JMenu mnuOutros;
     private javax.swing.JTextField tfCoeficienteVariacao;
     private javax.swing.JTextField tfDesvioPadrao;
     private javax.swing.JTextField tfMedia;

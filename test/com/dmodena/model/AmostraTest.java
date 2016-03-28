@@ -248,8 +248,6 @@ public class AmostraTest {
         valores.add(5.7);
         Amostra instance = new Amostra(valores);
         ArrayList<Double> expResult = new ArrayList<>();
-        expResult.add(0d);
-        expResult.add(3d);
         ArrayList<Double> result = instance.getModa();
         assertEquals(expResult, result);
     }
@@ -270,6 +268,23 @@ public class AmostraTest {
         valores.add(3d);
         Amostra instance = new Amostra(valores);
         ArrayList<Double> expResult = new ArrayList<>();
+        expResult.add(0d);
+        expResult.add(3d);
+        ArrayList<Double> result = instance.getModa();
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testGetModa6() {
+        System.out.println("getModa");
+        ArrayList<Double> valores = new ArrayList<>();
+        valores.add(1d);
+        valores.add(2d);
+        valores.add(2d);
+        valores.add(3d);
+        Amostra instance = new Amostra(valores);
+        ArrayList<Double> expResult = new ArrayList<>();
+        expResult.add(2d);
         ArrayList<Double> result = instance.getModa();
         assertEquals(expResult, result);
     }
