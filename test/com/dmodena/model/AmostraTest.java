@@ -39,7 +39,7 @@ public class AmostraTest {
     public void testRemoverNumero() {
         System.out.println("removerNumero");
         Double numero = 2d;
-        ArrayList<Double> lista = new ArrayList<Double>();
+        ArrayList<Double> lista = new ArrayList<>();
         lista.add(2d);
         lista.add(5d);
         Amostra instance = new Amostra(lista);
@@ -55,7 +55,7 @@ public class AmostraTest {
     @Test
     public void testGetValores() {
         System.out.println("getValores");
-        ArrayList<Double> expResult = new ArrayList<Double>();
+        ArrayList<Double> expResult = new ArrayList<>();
         expResult.add(2d);
         expResult.add(5d);
         Amostra instance = new Amostra(expResult);        
@@ -171,5 +171,106 @@ public class AmostraTest {
         double result = instance.getQuantil(fracao);
         assertEquals(expResult, result, 0.0);
     }
+
+    /**
+     * Tests of getModa method, of class Amostra.
+     */
+    @Test
+    public void testGetModa1() {
+        System.out.println("getModa");
+        ArrayList<Double> valores = new ArrayList<>();
+        valores.add(2d);
+        valores.add(2d);
+        valores.add(2d);
+        valores.add(3d);
+        valores.add(3d);
+        valores.add(5d);
+        Amostra instance = new Amostra(valores);
+        ArrayList<Double> expResult = new ArrayList<>();
+        expResult.add(2d);
+        ArrayList<Double> result = instance.getModa();
+        assertEquals(expResult, result);
+    }
     
+    @Test
+    public void testGetModa2() {
+        System.out.println("getModa");
+        ArrayList<Double> valores = new ArrayList<>();
+        valores.add(1.1);
+        valores.add(2.2);
+        valores.add(2.2);
+        valores.add(3.3);
+        valores.add(3.4);
+        valores.add(4.4);
+        valores.add(4.4);
+        valores.add(5.6);
+        valores.add(6.7);
+        Amostra instance = new Amostra(valores);
+        ArrayList<Double> expResult = new ArrayList<>();
+        expResult.add(2.2);
+        expResult.add(4.4);
+        ArrayList<Double> result = instance.getModa();
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testGetModa3() {
+        System.out.println("getModa");
+        ArrayList<Double> valores = new ArrayList<>();
+        valores.add(1d);
+        valores.add(2d);
+        valores.add(3d);
+        valores.add(4d);
+        valores.add(5d);
+        valores.add(6d);
+        valores.add(7d);
+        valores.add(8d);
+        valores.add(9d);
+        Amostra instance = new Amostra(valores);
+        ArrayList<Double> expResult = new ArrayList<>();
+        ArrayList<Double> result = instance.getModa();
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testGetModa4() {
+        System.out.println("getModa");
+        ArrayList<Double> valores = new ArrayList<>();
+        valores.add(1.2);
+        valores.add(1.2);
+        valores.add(2.3);
+        valores.add(2.3);
+        valores.add(3.4);
+        valores.add(3.4);
+        valores.add(4.5);
+        valores.add(4.5);
+        valores.add(5.7);
+        valores.add(5.7);
+        Amostra instance = new Amostra(valores);
+        ArrayList<Double> expResult = new ArrayList<>();
+        expResult.add(0d);
+        expResult.add(3d);
+        ArrayList<Double> result = instance.getModa();
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testGetModa5() {
+        System.out.println("getModa");
+        ArrayList<Double> valores = new ArrayList<>();
+        valores.add(2d);
+        valores.add(3d);
+        valores.add(2d);
+        valores.add(0d);
+        valores.add(0d);
+        valores.add(4d);
+        valores.add(3d);
+        valores.add(0d);
+        valores.add(5d);
+        valores.add(3d);
+        Amostra instance = new Amostra(valores);
+        ArrayList<Double> expResult = new ArrayList<>();
+        ArrayList<Double> result = instance.getModa();
+        assertEquals(expResult, result);
+    }
 }
