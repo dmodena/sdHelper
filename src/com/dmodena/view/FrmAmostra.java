@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author dmodena
  */
 public class FrmAmostra extends javax.swing.JFrame {
-    private final String VERSAO = "1.2.1";
+    private final String VERSAO = "1.2.2";
     Amostra amostra;
     NumberValidator numberValidator;
     ArrayList<Double> valores;
@@ -84,7 +84,7 @@ public class FrmAmostra extends javax.swing.JFrame {
         jLabel2.setLabelFor(tfValor);
         jLabel2.setText("Valor");
 
-        tfValor.setToolTipText("Valor a ser adicionado. Use ponto (.) para separar as casas decimais.");
+        tfValor.setToolTipText("Valor a ser adicionado.");
         tfValor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfValorActionPerformed(evt);
@@ -476,6 +476,7 @@ public class FrmAmostra extends javax.swing.JFrame {
         boolean valido = false;
         
         if(!tfValor.getText().trim().isEmpty()) {
+            tfValor.setText(tfValor.getText().replaceAll(",", "."));
             numberValidator = new NumberValidator();
             valido = numberValidator.validate(tfValor.getText().trim());
         }        

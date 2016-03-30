@@ -205,7 +205,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="tfValor">
           <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="Valor a ser adicionado. Use ponto (.) para separar as casas decimais."/>
+            <Property name="toolTipText" type="java.lang.String" value="Valor a ser adicionado."/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfValorActionPerformed"/>

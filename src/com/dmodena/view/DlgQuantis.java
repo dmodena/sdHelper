@@ -171,6 +171,7 @@ public class DlgQuantis extends javax.swing.JDialog {
         if(amostra != null)
             if(amostra.getValores().size() > 0)
                 if(!tfFracao.getText().trim().isEmpty()) {
+                    tfFracao.setText(tfFracao.getText().replaceAll(",", "."));
                     numberValidator = new NumberValidator(true);
                     valido = numberValidator.validate(tfFracao.getText().trim());
                 }
