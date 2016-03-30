@@ -17,7 +17,7 @@ sdHelper é um pequeno programa em Java criado para auxiliar nos estudos de Esta
 
 Como Utilizar
 --------------
-Você pode fazer o download do programa no site do **Mega** clicando [neste link](https://mega.nz/#!RNEgxTIb!uHUiFNhm-Jx9lPvRGPIIk7ht9lTT4q56quopQnnOsMQ).
+Você pode fazer o download do programa no site do **Mega** clicando [neste link](https://mega.nz/#!UBkRCD5L!s_IJG25XuuDJ4C5aiYcckxkXjNz1CI4XbJDQGPMllKk).
 
 Não é necessário instalar o programa, basta executá-lo. Para tanto, você precisa apenas ter o Java (JVM) versão 1.7 ou superior instalado em seu computador.
 
